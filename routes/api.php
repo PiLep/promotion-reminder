@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/promotion', 'PromotionController@all')->name('promotion.all');
+
+Route::post('/promotion', 'PromotionController@store')->name('promotion.store');
+
+Route::get('/promotion/{id}', 'PromotionController@show')->name('promotion.show');
+
+Route::put('/promotion/{id}', 'PromotionController@update')->name('promotion.update');
+
+Route::delete('/promotion/{id}', 'PromotionController@destory')->name('promotion.destroy');

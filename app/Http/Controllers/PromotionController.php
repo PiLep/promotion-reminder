@@ -18,7 +18,9 @@ class PromotionController extends Controller
     {
         $promotions = Promotion::all();
 
-        return view('promotions.index', compact('promotions'));
+        // return view('promotions.index', compact('promotions'));
+
+        return response()->json($promotions);
     }
 
     /**
